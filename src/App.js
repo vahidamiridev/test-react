@@ -1,39 +1,16 @@
-import logo from './logo.svg';
+import withData from './HOF/change'
 import './App.css';
-import { useEffect, useState } from 'react';
-
-function App() {
-  const [number , setNumber] = useState(0)
-  const [isActive , setIsActive] = useState(false)
-
-  useEffect(()=>{
-      console.log(number)
-      console.log(isActive)
-  },[number])
-
-  const changeNumberHandler =  ()=>{
-      //  setNumber(number + 1)
-      // console.log(number)
-  }
-
-  const changeThemeHandler = ()=>{
-    if(number>= 2) {
-       setIsActive(true)
-      // console.log(isActive)
-    }
-
-  }
 
 
+import Layout from './components/layout/Layout';
+
+function App(props) {
+  
   return (
-    <div className="App">
-
-      <button onClick={changeNumberHandler}>ChangeNaumber</button>
-      <button onClick={changeThemeHandler}>ChangeTheme</button>
-
- 
-    </div>
-  );
+    <>
+      <Layout/>
+    </>
+  )
 }
 
-export default App;
+export default withData(App , 'green') ;
