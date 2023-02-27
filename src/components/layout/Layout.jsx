@@ -7,13 +7,14 @@ import Sidebar from "../sidebar/Sidebar";
 import Register from "../../pages/register/Register";
 import ProductList from "../productList/ProductList";
 import Whiteboard from "../../pages/whiteboard/Whiteboard";
+import Header from "../../common/header/Header";
 
 
 export default  ({chidren})=>{
     return(
         <>
            <Section id="layout">     
-                <div id="header" className="w-full h-[50px] bg-yellow-500">Header</div>
+              <Header/>
                 <div className="flex ">
                 <div id="sidebar" className="w-1/6 h-[520px] bg-gray-200">
                     <Sidebar/>
@@ -26,8 +27,7 @@ export default  ({chidren})=>{
 
                         <Route path="/login" element = {<Login/>}/>
                         <Route path="/register" element = {<Register/>}/>
-                        <Route path="/whiteboard" element={<Whiteboard/>}/>
-
+                        <Route path="/whiteboard/:id" element={<Whiteboard />}/>
                     </Routes>
                     </div>
                 </div>
